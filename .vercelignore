@@ -1,0 +1,11 @@
+docs
+archive
+.agents
+.claude
+GEMINI.md
+PRODUCT.md
+design-qa.md
+run-dev.command
+deploy.command
+petpal-shots
+supermall-shots

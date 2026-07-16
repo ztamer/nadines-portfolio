@@ -1,0 +1,16 @@
+#!/bin/bash
+cd "$(dirname "$0")"
+echo "════════════════════════════════════════════════════════"
+echo "  Deploying Nadine's portfolio to Vercel (production)"
+echo ""
+echo "  First time only:"
+echo "   1. It asks you to log in — pick a method, finish in browser"
+echo "   2. 'Set up and deploy?'  -> press ENTER (yes)"
+echo "   3. 'Which scope?'        -> press ENTER"
+echo "   4. 'Link to existing?'   -> press ENTER (no)"
+echo "   5. 'Project name?'       -> type: nadine-portfolio"
+echo "   6. 'Directory?'          -> press ENTER (./)"
+echo "════════════════════════════════════════════════════════"
+npx vercel@latest deploy --prod
+echo ""
+echo "Done — the https://…vercel.app production URL is printed above."
