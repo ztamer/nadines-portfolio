@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+const productionDomain = process.env.VERCEL_PROJECT_PRODUCTION_URL;
+
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    productionDomain ? `https://${productionDomain}` : "http://localhost:3000",
+  ),
   title: "Nadine Shokair — UX/UI Designer",
   description:
     "Nadine Shokair is a UX/UI designer based in Cairo, Egypt, building digital products that think clearly and feel deliberate.",
