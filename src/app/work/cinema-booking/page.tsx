@@ -22,8 +22,7 @@ export default function CinemaBookingPage() {
         alt: "Cinema booking app showing a movie, date, time, and reservation action",
       }}
       brief={[
-        "Cinema booking often breaks one decision into several disconnected steps: choose a film, find a date, select a time, pick seats, pay, and then search for the ticket at the door. Every handoff is a chance to lose context or abandon the night.",
-        "This mobile concept keeps that journey continuous. The same black-and-gold visual language moves from movie discovery to seat selection and finally to a scannable ticket, so the user always knows what they chose and what happens next.",
+        "Going to the cinema should be about enjoying the movie, not struggling to book a ticket. This app concept explores a simpler way to discover movies, check showtimes, choose seats, and book tickets all in one place. I focused on connecting these steps into a smooth journey, making it easy for users to find what they want and complete their booking without unnecessary complications.",
       ]}
       chapters={[
         {

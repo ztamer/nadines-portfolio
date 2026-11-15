@@ -22,8 +22,7 @@ export default function TheRecruiterPage() {
         alt: "The Recruiter dashboard — job openings, applications table with stages and buckets",
       }}
       brief={[
-        "Noon's talent team screens thousands of applications per opening — and was doing it across spreadsheets, inboxes, and memory. The Recruiter replaces that with one operational surface: openings, candidates, interviews, and decisions in a single tool.",
-        "The design brief was speed with judgment: a recruiter should see the state of every pipeline in seconds, cut a 2,000-person list to twenty in a few clicks, and never lose a promising candidate to a forgotten tab.",
+        "Hiring involves a lot of moving pieces, from reviewing applications and keeping track of candidates to managing different stages of the recruitment process. The Recruiter is a platform designed to bring all of that together in one place. I worked on creating an experience that makes these workflows easier to manage, with a focus on organizing information, simplifying navigation, and helping recruiters spend less time figuring out the system and more time finding the right people.",
       ]}
       chapters={[
         {
@@ -70,7 +69,7 @@ export default function TheRecruiterPage() {
         detail:
           "SHIPPED TO NOON'S TALENT ACQUISITION TEAM AS THEIR DAILY DRIVER — SCREENING SESSIONS THAT TOOK AFTERNOONS NOW FIT BETWEEN MEETINGS. FULL WALKTHROUGH AVAILABLE IN A CALL.",
       }}
-      next={{ href: "/work/noon-profile", label: "NOON PROFILE" }}
+      next={{ href: "/work/linkedin-ai-interview", label: "LINKEDIN AI INTERVIEW" }}
     />
   );
 }

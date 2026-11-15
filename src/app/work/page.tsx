@@ -22,7 +22,7 @@ type FeaturedItem = {
   num: string;
   name: string;
   category: string;
-  year: string;
+  year?: string;
   image: string;
   hoverImage: string;
   blurb: string;
@@ -43,6 +43,15 @@ const FEATURED: FeaturedItem[] = [
   },
   {
     num: "02",
+    name: "BOSTA",
+    category: "MOBILE · DELIVERY · PRODUCT DESIGN",
+    image: "/images/mockup-bosta.jpg",
+    hoverImage: "/images/project-bosta.jpg",
+    href: "/work/bosta",
+    blurb: "A consumer app for tracking deliveries, sending packages, and discovering local brands, with a design focus on Send Package.",
+  },
+  {
+    num: "03",
     name: "THE RECRUITER",
     category: "DASHBOARD \u00b7 B2B \u00b7 HR OPS",
     year: "2024",
@@ -53,7 +62,26 @@ const FEATURED: FeaturedItem[] = [
       "Hiring ops dashboard for noon's talent team \u2014 every applicant, every stage, one screen. Compound filters, triage buckets, and a pipeline that reads at a glance.",
   },
   {
-    num: "03",
+    num: "04",
+    name: "LINKEDIN AI INTERVIEW",
+    category: "MOBILE · AI INTERVIEW · PRODUCT DESIGN",
+    year: "CONCEPT",
+    image: "/images/mockup-linkedin-ai-interview.jpg",
+    hoverImage: "/images/project-linkedin-ai-interview.jpg",
+    href: "/work/linkedin-ai-interview",
+    blurb: "AI interview practice experience for LinkedIn.",
+  },
+  {
+    num: "05",
+    name: "GXPER",
+    category: "WEB + MOBILE · SPORTS PLATFORM",
+    image: "/images/mockup-gxper.jpg",
+    hoverImage: "/images/project-gxper.jpg",
+    href: "/work/gxper",
+    blurb: "A sports platform designed around clear, connected journeys across web and mobile.",
+  },
+  {
+    num: "06",
     name: "NOON PROFILE",
     category: "WEB + APP \u00b7 IDENTITY \u00b7 LIVE",
     year: "2024",
@@ -64,7 +92,7 @@ const FEATURED: FeaturedItem[] = [
       "Account and profile management across noon web and mobile \u2014 one identity powering every noon app, edited in seconds and trusted everywhere.",
   },
   {
-    num: "04",
+    num: "07",
     name: "PETPAL",
     category: "MOBILE · VET CARE · BOOKING FLOW",
     year: "2025",
@@ -75,7 +103,7 @@ const FEATURED: FeaturedItem[] = [
       "Vet discovery and booking without the phone calls: trusted profiles, visible availability, and a four-tap path from search to confirmation.",
   },
   {
-    num: "05",
+    num: "09",
     name: "VERTEX",
     category: "WEB · FINTECH · PRODUCT SYSTEM",
     year: "2025",
@@ -86,7 +114,16 @@ const FEATURED: FeaturedItem[] = [
       "A prop-trading landing page that brings the offer, proof points, and next action into one focused acquisition frame.",
   },
   {
-    num: "06",
+    num: "10",
+    name: "BASE360",
+    category: "WEB · LANDING PAGE · VISUAL DESIGN",
+    image: "/images/mockup-base360.jpg",
+    hoverImage: "/images/project-base360.jpg",
+    href: "/work/base360",
+    blurb: "A website and landing page that bring the brand’s visual identity and product offering together.",
+  },
+  {
+    num: "11",
     name: "CINEMA BOOKING",
     category: "MOBILE · BOOKING · COMMERCE",
     year: "2025",
@@ -101,8 +138,16 @@ const FEATURED: FeaturedItem[] = [
 // ── Index — product work under NDA / personal ──────────────────────────────
 
 const INDEX = [
-  { name: "SECURITY SETTINGS", company: "NOON",      type: "MOBILE · SECURITY", note: "LIVE" },
+  {
+    num: "08",
+    name: "NOON — SECURITY & DEVICE MANAGEMENT",
+    type: "MOBILE · SECURITY",
+    note: "LIVE",
+    brief: "We use our accounts across different devices, but we don't always know where we're still signed in. This Noon feature gives users the ability to sign out of all active devices from one place. I worked on making this action easy to find and understand, while ensuring users feel confident about what happens when they use it. It's a small feature, but an important one when it comes to giving users more control over their account security. The feature is now live.",
+  },
 ];
+
+const PROJECTS = [...FEATURED, ...INDEX].sort((a, b) => Number(a.num) - Number(b.num));
 
 // ── Featured project block ──────────────────────────────────────────────────
 
@@ -296,65 +341,76 @@ function IndexRow({
   const reduced = useReducedMotion() ?? false;
 
   return (
-    <motion.div
-      initial={reduced ? false : { opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.4 }}
-      transition={{ duration: 0.5, delay: index * 0.05, ease: expo }}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      className="relative flex flex-col gap-1 border-t border-white/10 py-5 sm:flex-row sm:items-baseline sm:gap-6 md:py-6"
-    >
-      <span
-        className="sm:flex-1"
-        style={{
-          fontFamily: '"VC Nudge Black", sans-serif',
-          fontWeight: 900,
-          fontSize: "clamp(20px, 2.6vw, 38px)",
-          lineHeight: 1,
-          letterSpacing: "-0.015em",
-          textTransform: "uppercase",
-          color: hovered ? PINK : "rgba(255,255,255,0.92)",
-          transition: "color 0.25s cubic-bezier(0.22,1,0.36,1)",
-        }}
+    <article>
+      <motion.div
+        initial={reduced ? false : { opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.5, delay: index * 0.05, ease: expo }}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        className="relative flex flex-col gap-2 border-y border-white/10 py-5 sm:flex-row sm:items-baseline sm:gap-6 md:py-6"
       >
-        {item.name}
-      </span>
-      <span
-        className="sm:w-[30%]"
-        style={{
-          fontFamily: '"Aeonik Mono", monospace',
-          fontSize: "clamp(10px, 0.85vw, 13px)",
-          letterSpacing: "0.18em",
-          textTransform: "uppercase",
-          color: "rgba(255,255,255,0.45)",
-        }}
-      >
-        {item.company} · {item.type}
-      </span>
-      <span
-        className="sm:w-28 sm:text-right"
-        style={{
-          fontFamily: '"Aeonik Mono", monospace',
-          fontSize: 10,
-          letterSpacing: "0.22em",
-          textTransform: "uppercase",
-          color: item.note === "LIVE" ? PINK : "rgba(255,255,255,0.3)",
-        }}
-      >
-        {item.note}
-      </span>
+        <span className="text-xs tracking-[0.24em] text-[#f62a99]" style={{ fontFamily: '"Aeonik Mono", monospace' }}>
+          {item.num}
+        </span>
+        <h2
+          className="m-0 sm:flex-1"
+          style={{
+            fontFamily: '"VC Nudge Black", sans-serif',
+            fontWeight: 900,
+            fontSize: "clamp(20px, 2.6vw, 38px)",
+            lineHeight: 1,
+            letterSpacing: "-0.015em",
+            textTransform: "uppercase",
+            color: hovered ? PINK : "rgba(255,255,255,0.92)",
+            transition: "color 0.25s cubic-bezier(0.22,1,0.36,1)",
+          }}
+        >
+          {item.name}
+        </h2>
+        <span
+          className="sm:w-[30%]"
+          style={{
+            fontFamily: '"Aeonik Mono", monospace',
+            fontSize: "clamp(10px, 0.85vw, 13px)",
+            letterSpacing: "0.18em",
+            textTransform: "uppercase",
+            color: "rgba(255,255,255,0.45)",
+          }}
+        >
+          {item.type}
+        </span>
+        <span
+          className="sm:w-28 sm:text-right"
+          style={{
+            fontFamily: '"Aeonik Mono", monospace',
+            fontSize: 10,
+            letterSpacing: "0.22em",
+            textTransform: "uppercase",
+            color: item.note === "LIVE" ? PINK : "rgba(255,255,255,0.3)",
+          }}
+        >
+          {item.note}
+        </span>
 
-      {/* Hover sweep */}
-      <div aria-hidden="true" className="absolute bottom-0 left-0 h-px w-full">
-        <motion.div
-          animate={{ scaleX: hovered ? 1 : 0 }}
-          transition={{ duration: 0.4, ease: expo }}
-          className="h-full origin-left"
-          style={{ backgroundColor: PINK }}
-        />
-      </div>
-    </motion.div>
+        {/* Hover sweep */}
+        <div aria-hidden="true" className="absolute bottom-0 left-0 h-px w-full">
+          <motion.div
+            animate={{ scaleX: hovered ? 1 : 0 }}
+            transition={{ duration: 0.4, ease: expo }}
+            className="h-full origin-left"
+            style={{ backgroundColor: PINK }}
+          />
+        </div>
+      </motion.div>
+      <section aria-label="The brief" className="mt-5 max-w-[62ch] font-['Aeonik_Mono',monospace]">
+        <h3 className="mb-3 text-xs uppercase tracking-[0.18em] text-white/75">The Brief</h3>
+        <p className="m-0 text-[clamp(12px,1vw,15px)] leading-[1.85] text-white/60">
+          {item.brief}
+        </p>
+      </section>
+    </article>
   );
 }
 
@@ -408,7 +464,7 @@ export default function WorkPage() {
                 color: "rgba(255,255,255,0.55)",
               }}
             >
-              SIX VISUAL CASE STUDIES, PLUS THE PRODUCT WORK THAT LIVES BEHIND
+              TEN VISUAL PROJECTS, PLUS THE PRODUCT WORK THAT LIVES BEHIND
               LOGIN SCREENS AND NDAS.
             </p>
             <span
@@ -424,60 +480,17 @@ export default function WorkPage() {
           </motion.div>
         </header>
 
-        {/* ── Featured case studies ── */}
         <section
-          aria-label="Featured case studies"
-          className="flex flex-col gap-24 px-7 md:gap-36 md:px-16"
+          aria-label="Projects"
+          className="flex flex-col gap-24 px-7 pb-24 md:gap-36 md:px-16 md:pb-32"
         >
-          {FEATURED.map((project, i) => (
-            <FeaturedProject key={project.name} project={project} index={i} />
-          ))}
-        </section>
-
-        {/* ── Index ── */}
-        <section
-          aria-label="Project index"
-          className="px-7 pt-28 pb-24 md:px-16 md:pt-40 md:pb-32"
-        >
-          <motion.h2
-            initial={reduced ? false : { opacity: 0, y: 32 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.8, ease: expo }}
-            className="m-0 mb-4"
-            style={{
-              fontFamily: '"VC Nudge Black", sans-serif',
-              fontWeight: 900,
-              fontSize: "clamp(40px, 7vw, 100px)",
-              lineHeight: 0.88,
-              letterSpacing: "-0.02em",
-              textTransform: "uppercase",
-              color: "white",
-            }}
-          >
-            THE REST OF
-            <br />
-            THE SHELF
-          </motion.h2>
-          <p
-            className="mb-12 max-w-[58ch]"
-            style={{
-              fontFamily: '"Aeonik Mono", monospace',
-              fontSize: "clamp(11px, 0.9vw, 14px)",
-              lineHeight: 1.8,
-              letterSpacing: "0.05em",
-              textTransform: "uppercase",
-              color: "rgba(255,255,255,0.45)",
-            }}
-          >
-            PRODUCT WORK AT NOON AND BEYOND — WALKTHROUGHS AVAILABLE IN A CALL.
-          </p>
-
-          <div className="border-b border-white/10">
-            {INDEX.map((item, i) => (
-              <IndexRow key={item.name} item={item} index={i} />
-            ))}
-          </div>
+          {PROJECTS.map((project, i) =>
+            "image" in project ? (
+              <FeaturedProject key={project.num} project={project} index={i} />
+            ) : (
+              <IndexRow key={project.num} item={project} index={i} />
+            )
+          )}
         </section>
 
         <Footer />

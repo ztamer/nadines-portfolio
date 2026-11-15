@@ -22,8 +22,7 @@ export default function NoonProfilePage() {
         alt: "Noon account profile on web and the mobile profile screen",
       }}
       brief={[
-        "A noon profile isn't one app's settings page — it's the identity behind Supermall, Food, Minutes, and every login in between. Change your phone number here and it changes everywhere; get it wrong and the user is locked out of an ecosystem.",
-        "The brief: make identity editing feel effortless without ever feeling casual — clear about what a field is used for, honest about what can't be undone, and consistent from a 27-inch browser to a phone in one hand.",
+        "Managing personal information should be simple, but certain details can make the process a little more complicated. This Noon feature allows users in the UAE to manage their residency status directly through their profiles. I worked on making the flow clear and easy to follow, helping users understand what information is needed and how to update it without feeling lost along the way. The feature is now live on Noon.",
       ]}
       chapters={[
         {

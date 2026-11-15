@@ -19,7 +19,7 @@ const beats = [
     number: "02",
     tag: "THE GRIND",
     headline: ["REAL", "PRODUCTS,", "REAL STAKES."],
-    body: "Takhzin: logistics under real operational constraints. Then Noon, one of the largest e-commerce platforms in the Arab world. Mobile apps, dashboards, platform features used by millions. Those products are still live today.",
+    body: "Takhzin: logistics under real operational constraints. Then noon, one of the largest e-commerce platforms in the Arab world. At Telda, fintech focused on credit and revolving limits. Mobile apps, dashboards, platform features used by millions. Those products are still live today.",
   },
   {
     number: "03",

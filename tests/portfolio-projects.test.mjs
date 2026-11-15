@@ -72,19 +72,27 @@ const projects = [
   },
 ];
 
-test("the homepage work sequence uses four linked real projects", () => {
+test("the homepage work sequence includes eight linked projects", () => {
   const source = read("src/components/WorkSection.tsx");
   const names = [
     "NOON SUPERMALL",
+    "BOSTA",
     "THE RECRUITER",
-    "PETPAL",
+    "LINKEDIN AI INTERVIEW",
+    "GXPER",
     "ACCOUNT MANAGEMENT",
+    "PETPAL",
+    "BASE360",
   ];
   const routes = [
     "/work/noon-supermall",
+    "/work/bosta",
     "/work/the-recruiter",
-    "/work/petpal",
+    "/work/linkedin-ai-interview",
+    "/work/gxper",
     "/work/noon-profile",
+    "/work/petpal",
+    "/work/base360",
   ];
 
   for (let index = 1; index < names.length; index += 1) {
@@ -183,7 +191,7 @@ test("Cinema uses the three supplied booking screens as one real flow", () => {
 test("the work index promotes the final three projects", () => {
   const source = read("src/app/work/page.tsx");
 
-  assert.match(source, /TEN VISUAL CASE STUDIES/);
+  assert.match(source, /TEN VISUAL PROJECTS/);
   for (const project of projects) {
     assert.match(source, new RegExp(`name: "${project.name}"`));
     assert.match(source, new RegExp(`href: "/work/${project.slug}"`));
@@ -224,15 +232,24 @@ test("every promoted project has metadata, content, and its complete artwork set
 });
 
 test("the case-study next links form one closed loop", () => {
-  const profile = read("src/app/work/noon-profile/page.tsx");
-  const petpal = read("src/app/work/petpal/page.tsx");
-  const vertex = read("src/app/work/vertex/page.tsx");
-  const cinema = read("src/app/work/cinema-booking/page.tsx");
+  const order = [
+    "noon-supermall",
+    "bosta",
+    "the-recruiter",
+    "linkedin-ai-interview",
+    "gxper",
+    "noon-profile",
+    "petpal",
+    "vertex",
+    "base360",
+    "cinema-booking",
+  ];
 
-  assert.match(profile, /next=\{\{ href: "\/work\/petpal"/);
-  assert.match(petpal, /next=\{\{ href: "\/work\/vertex"/);
-  assert.match(vertex, /next=\{\{ href: "\/work\/cinema-booking"/);
-  assert.match(cinema, /next=\{\{ href: "\/work\/noon-supermall"/);
+  for (const [index, slug] of order.entries()) {
+    const source = read(`src/app/work/${slug}/page.tsx`);
+    const next = order[(index + 1) % order.length];
+    assert.ok(source.includes(`next={{ href: "/work/${next}"`), `${slug} should link to ${next}`);
+  }
 });
 
 test("the footer never paints a dark overlay over preceding content", () => {

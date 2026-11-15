@@ -22,8 +22,7 @@ export default function NoonSupermallPage() {
         alt: "Noon Supermall app — home, BESTDEALS and Ramadan screens",
       }}
       brief={[
-        "Supermall is noon's big-basket marketplace — 200K+ SKUs, from a chocolate bar to a MacBook, promised at your door in under two hours. The product had grown feature by feature; the experience needed one spine.",
-        "The redesign covered the full journey: onboarding, home, discovery, product, cart, and the campaign machinery that re-skins the store for every season — built as a component system so new modules ship without new debt.",
+        "Supermall is where Noon brings together a huge variety of products and shopping experiences. I worked on redesigning its homepage, looking at how users discover products, navigate between categories, and interact with promotions. The challenge was to make the experience easier to explore while also giving products and campaigns the visibility they need. I focused on creating a clearer structure, improving content hierarchy, and making the homepage feel more engaging without overwhelming users.",
       ]}
       chapters={[
         {
@@ -70,7 +69,7 @@ export default function NoonSupermallPage() {
         detail:
           "SHIPPED AS A COMPONENT LIBRARY THE NOON TEAM STILL BUILDS ON — CAMPAIGN SKINS, MODULE SLOTS, AND A HOME PAGE THAT RE-MERCHANDISES ITSELF WITHOUT A DESIGNER IN THE LOOP. FULL WALKTHROUGH AVAILABLE IN A CALL.",
       }}
-      next={{ href: "/work/the-recruiter", label: "THE RECRUITER" }}
+      next={{ href: "/work/bosta", label: "BOSTA" }}
     />
   );
 }

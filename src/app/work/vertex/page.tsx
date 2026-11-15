@@ -22,8 +22,7 @@ export default function VertexPage() {
         alt: "Vertex landing page with funded account offer and trading benefits",
       }}
       brief={[
-        "Vertex needed the prop-trading offer to feel immediate without becoming noisy. The landing page leads with one clear promise, then keeps the most persuasive benefits visible around it instead of burying them below the fold.",
-        "The result is a focused acquisition screen: funded accounts in one click, four concise proof points, direct product navigation, and two clear paths for traders who are ready to open the app or still need to learn more.",
+        "For Vertex, the challenge was to create a website that introduces a prop trading firm in a way that feels clear, professional, and trustworthy. I focused on translating the brand into a digital experience, organizing the content so visitors can quickly understand what the firm offers, and creating a visual direction that supports its credibility. The goal was to make the website informative without making it feel overwhelming.",
       ]}
       chapters={[
         {
@@ -60,7 +59,7 @@ export default function VertexPage() {
         detail:
           "THE LANDING PAGE HOLDS THE PROMISE, PROOF, AND NEXT ACTION IN A SINGLE COMPOSITION. THE RESULT FEELS PREMIUM, DIRECT, AND EASY TO UNDERSTAND BEFORE A TRADER MOVES DEEPER INTO THE PRODUCT.",
       }}
-      next={{ href: "/work/cinema-booking", label: "CINEMA BOOKING" }}
+      next={{ href: "/work/base360", label: "BASE360" }}
     />
   );
 }

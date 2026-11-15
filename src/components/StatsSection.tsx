@@ -36,7 +36,7 @@ const PROOF = [
     number: 2,
     suffix: "+",
     unit: "YEARS",
-    detail: "Shipping production design at Noon & Takhzin",
+    detail: "Shipping production design at noon, Telda & Takhzin",
   },
   {
     number: 10,
@@ -52,7 +52,7 @@ const PROOF = [
   },
 ];
 
-const CLIENTS = ["NOON", "SUPERMALL", "THE RECRUITER", "TAKHZIN", "PETPAL", "VERTEX", "CINEMA BOOKING"];
+const CLIENTS = ["NOON", "TELDA", "SUPERMALL", "THE RECRUITER", "TAKHZIN", "PETPAL", "VERTEX", "CINEMA BOOKING"];
 
 // ── Proof row ──────────────────────────────────────────────────────────────
 

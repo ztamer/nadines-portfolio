@@ -22,8 +22,7 @@ export default function PetPalPage() {
         alt: "PetPal vet list, vet profile, and appointment time screens",
       }}
       brief={[
-        "Finding a vet is usually a chain of phone calls: ask whether the clinic treats your pet, ask when the doctor is free, then repeat the same details to book. In a stressful moment, the owner is doing the coordination the service should have done.",
-        "PetPal turns that call tree into one calm mobile path. The concept brings specialties, ratings, distance, live availability, pet details, and price into the same flow, so the decision and the appointment happen together.",
+        "Finding the right veterinary care for a pet shouldn't feel like another difficult task. PetPal is a mobile app concept that brings pet owners and veterinary services closer together. I explored how users could discover vets, browse available options, and book appointments without going through unnecessary steps. The focus was on making the experience feel simple, approachable, and easy to navigate, especially when it comes to something as important as a pet's health.",
       ]}
       chapters={[
         {

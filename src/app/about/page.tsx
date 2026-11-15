@@ -14,7 +14,8 @@ const CAREER = [
   { year: "2024", role: "Interior Design Graduate", place: "Egypt" },
   { year: "2025", role: "Google UX Certificate + CalArts, Coursera", place: "Remote" },
   { year: "2025", role: "Product Designer — Takhzin", place: "Cairo" },
-  { year: "2025 — NOW", role: "UX/UI Designer — Noon", place: "Regional" },
+  { year: "2025", role: "Product Designer | Customer Facing Products | noon - Ecommerce", place: "Regional" },
+  { year: "2026", role: "Product Designer III | Credit / Revolving Limit | Telda - Fintech", place: "Cairo" },
   { year: "NOW", role: "Open for full-time + freelance", place: "Cairo" },
 ];
 
@@ -240,7 +241,7 @@ export default function AboutPage() {
               environments. When I moved into UX, I brought that with me: designing a product flow and
               designing a room share the same core. Understand how people move, what they need at each
               moment, remove everything that interrupts that. I came up through Google UX certification,
-              CalArts on Coursera, then two years shipping real products at Takhzin and Noon. Academic
+              CalArts on Coursera, then 2+ years shipping real products at Takhzin, noon, and Telda. Academic
               rigor plus production-grade experience. That is what I bring to every brief.
             </motion.p>
           </div>
@@ -301,7 +302,7 @@ export default function AboutPage() {
           <div style={{ padding: "0 clamp(40px, 8vw, 120px)" }}>
             {CAREER.map((step, i) => (
               <motion.div
-                key={step.year}
+                key={`${step.year}-${step.role}`}
                 initial={{ opacity: 0, y: 14 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: i * 0.08, ease: expo }}

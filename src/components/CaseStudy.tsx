@@ -35,9 +35,9 @@ export interface CaseStudyProps {
   intro: string;
   facts: { k: string; v: string }[];
   cover: { src: string; alt: string; preserveArtwork?: boolean };
-  brief: string[];
+  brief?: string[];
   chapters: CaseChapter[];
-  outcome: { lines: React.ReactNode; detail: string };
+  outcome?: { lines: React.ReactNode; detail: string };
   next: { href: string; label: string };
 }
 
@@ -237,6 +237,7 @@ export function CaseStudy({
         </section>
 
         {/* ── Brief ── */}
+        {brief && brief.length > 0 && (
         <section
           aria-label="The brief"
           className="grid gap-10 px-7 pt-24 pb-8 md:grid-cols-[38%_1fr] md:gap-16 md:px-16 md:pt-36 md:pb-12"
@@ -277,6 +278,7 @@ export function CaseStudy({
             </div>
           </Reveal>
         </section>
+        )}
 
         {/* ── Chapters ── */}
         <div className="flex flex-col gap-24 px-7 pt-16 md:gap-36 md:px-16 md:pt-24">
@@ -357,6 +359,7 @@ export function CaseStudy({
         </div>
 
         {/* ── Outcome ── */}
+        {outcome && (
         <section
           aria-label="Outcome"
           className="px-7 pt-28 pb-8 md:px-16 md:pt-40 md:pb-12"
@@ -393,6 +396,7 @@ export function CaseStudy({
             </p>
           </Reveal>
         </section>
+        )}
 
         {/* ── Next project ── */}
         <section
