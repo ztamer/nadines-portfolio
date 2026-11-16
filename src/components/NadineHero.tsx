@@ -126,12 +126,12 @@ export function NadineHero() {
         transition={{ duration: 1.2, delay: 0.15, ease: expo }}
       >
         <Image
-          src="/images/nadine-home-cutout.png"
+          src="/images/nadine-home-headshot.webp"
           alt="Nadine Shokair"
           fill
           priority
+          unoptimized
           className="object-contain [mask-image:linear-gradient(to_bottom,black_80%,transparent)] md:[mask-composite:intersect] md:[mask-image:linear-gradient(to_bottom,black_90%,transparent),linear-gradient(to_right,black_93%,transparent)]"
-          sizes="(min-width: 768px) min(75svh, 72vw), min(104vw, 74svh)"
         />
       </motion.div>
 
@@ -148,11 +148,7 @@ export function NadineHero() {
       {/* LAYER 4 — Bottom fade into the page body */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute right-0 bottom-0 left-0 z-[4] h-[62%] md:h-1/2"
-        style={{
-          background:
-            "linear-gradient(to bottom, transparent 0%, rgba(8,9,11,0.55) 55%, rgba(8,9,11,0.92) 82%, #08090b 100%)",
-        }}
+        className="pointer-events-none absolute right-0 bottom-0 left-0 z-[4] h-[62%] [background:linear-gradient(to_bottom,transparent,rgba(8,9,11,0.38)_55%,rgba(8,9,11,0.88)_82%,#08090b)] md:h-1/2"
       />
 
       {/* LAYER 5 — Film grain */}
