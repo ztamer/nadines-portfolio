@@ -72,17 +72,20 @@ const projects = [
   },
 ];
 
-test("the homepage work sequence includes eight linked projects", () => {
+test("the homepage lists all eleven projects in portfolio order", () => {
   const source = read("src/components/WorkSection.tsx");
   const names = [
-    "NOON SUPERMALL",
-    "BOSTA",
-    "THE RECRUITER",
-    "LINKEDIN AI INTERVIEW",
-    "GXPER",
-    "ACCOUNT MANAGEMENT",
-    "PETPAL",
-    "BASE360",
+    "Noon Supermall – eCommerce Homepage Redesign",
+    "Bosta – Consumer App: Track, Send & Shop",
+    "The Recruiter – ATS & Hiring Management Platform",
+    "LinkedIn – AI Interview Practice Experience",
+    "GXPER – Sports Platform | Web & Mobile App",
+    "Noon – UAE Resident Status & Profile Management",
+    "PetPal – Veterinary Appointment Booking App",
+    "Noon – Security & Device Management",
+    "Vertex – Prop Trading Website",
+    "Base360 – Website & Landing Page",
+    "Movie Cinema – Ticket Booking App",
   ];
   const routes = [
     "/work/noon-supermall",
@@ -92,7 +95,10 @@ test("the homepage work sequence includes eight linked projects", () => {
     "/work/gxper",
     "/work/noon-profile",
     "/work/petpal",
+    "/work#noon-security",
+    "/work/vertex",
     "/work/base360",
+    "/work/cinema-booking",
   ];
 
   for (let index = 1; index < names.length; index += 1) {
@@ -115,7 +121,8 @@ test("the homepage work sequence includes eight linked projects", () => {
     assert.doesNotMatch(source, new RegExp(placeholder));
   }
 
-  assert.match(source, /aria-label=\{`\$\{name\} — open case study`\}/);
+  assert.match(source, /— open case study/);
+  assert.match(source, /— read the brief/);
   assert.match(
     source,
     /<div aria-hidden="true" className="absolute inset-0">\s*<Image src=\{bg\}/,

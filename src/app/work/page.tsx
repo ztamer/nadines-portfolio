@@ -140,6 +140,7 @@ const FEATURED: FeaturedItem[] = [
 const INDEX = [
   {
     num: "08",
+    id: "noon-security",
     name: "NOON — SECURITY & DEVICE MANAGEMENT",
     type: "MOBILE · SECURITY",
     note: "LIVE",
@@ -341,7 +342,7 @@ function IndexRow({
   const reduced = useReducedMotion() ?? false;
 
   return (
-    <article>
+    <article id={item.id} className="scroll-mt-28">
       <motion.div
         initial={reduced ? false : { opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}

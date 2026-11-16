@@ -117,21 +117,21 @@ export function NadineHero() {
         </motion.div>
       </div>
 
-      {/* LAYER 2 — Nadine cutout with slow rise-in */}
+      {/* LAYER 2 — Nadine's cutout with slow rise-in */}
       <motion.div
         ref={figureRef}
-        className="absolute inset-0 z-[2]"
+        className="absolute top-[45%] left-1/2 z-[2] aspect-square w-[min(104vw,74svh)] -translate-x-1/2 -translate-y-1/2 md:top-auto md:bottom-[11svh] md:w-[min(75svh,72vw)] md:translate-y-0"
         initial={reduced ? false : { opacity: 0, y: 36 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 0.15, ease: expo }}
       >
         <Image
-          src="/images/nadine-cutout.png"
+          src="/images/nadine-home-cutout.png"
           alt="Nadine Shokair"
           fill
           priority
-          className="object-cover object-[center_15%] md:object-contain md:object-[center_5%]"
-          sizes="100vw"
+          className="object-contain [mask-image:linear-gradient(to_bottom,black_80%,transparent)] md:[mask-composite:intersect] md:[mask-image:linear-gradient(to_bottom,black_90%,transparent),linear-gradient(to_right,black_93%,transparent)]"
+          sizes="(min-width: 768px) min(75svh, 72vw), min(104vw, 74svh)"
         />
       </motion.div>
 

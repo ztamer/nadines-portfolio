@@ -20,7 +20,7 @@ const expo  = [0.22, 1, 0.36, 1] as const;
 const projects = [
   {
     num: "01",
-    name: "NOON SUPERMALL",
+    name: "Noon Supermall – eCommerce Homepage Redesign",
     company: "NOON",
     type: "MOBILE · E-COMMERCE",
     tags: "MOBILE · E-COMMERCE · DESIGN SYSTEM",
@@ -31,7 +31,7 @@ const projects = [
   },
   {
     num: "02",
-    name: "BOSTA",
+    name: "Bosta – Consumer App: Track, Send & Shop",
     company: "BOSTA",
     type: "MOBILE · DELIVERY · PRODUCT DESIGN",
     tags: "MOBILE · DELIVERY · PRODUCT DESIGN",
@@ -42,7 +42,7 @@ const projects = [
   },
   {
     num: "03",
-    name: "THE RECRUITER",
+    name: "The Recruiter – ATS & Hiring Management Platform",
     company: "NOON",
     type: "DASHBOARD · HR OPS",
     tags: "DASHBOARD · B2B · HR OPERATIONS",
@@ -53,7 +53,7 @@ const projects = [
   },
   {
     num: "04",
-    name: "LINKEDIN AI INTERVIEW",
+    name: "LinkedIn – AI Interview Practice Experience",
     company: "PRODUCT CONCEPT",
     type: "MOBILE · AI INTERVIEW PRACTICE",
     tags: "MOBILE · AI INTERVIEW · PRODUCT DESIGN",
@@ -64,7 +64,7 @@ const projects = [
   },
   {
     num: "05",
-    name: "GXPER",
+    name: "GXPER – Sports Platform | Web & Mobile App",
     company: "GXPER",
     type: "WEB + MOBILE · SPORTS PLATFORM",
     tags: "WEB + MOBILE · TOURNAMENTS · PRODUCT DESIGN",
@@ -75,7 +75,7 @@ const projects = [
   },
   {
     num: "06",
-    name: "ACCOUNT MANAGEMENT",
+    name: "Noon – UAE Resident Status & Profile Management",
     company: "NOON",
     type: "WEB + APP · IDENTITY",
     tags: "WEB + APP · ACCOUNT · IDENTITY",
@@ -86,7 +86,7 @@ const projects = [
   },
   {
     num: "07",
-    name: "PETPAL",
+    name: "PetPal – Veterinary Appointment Booking App",
     company: "PRODUCT CONCEPT",
     type: "MOBILE · VET CARE",
     tags: "MOBILE · VET CARE · BOOKING FLOW",
@@ -97,7 +97,29 @@ const projects = [
   },
   {
     num: "08",
-    name: "BASE360",
+    name: "Noon – Security & Device Management",
+    company: "NOON",
+    type: "MOBILE · SECURITY",
+    tags: "MOBILE · ACCOUNT SECURITY",
+    live: true,
+    bg: null,
+    mockup: null,
+    href: "/work#noon-security",
+  },
+  {
+    num: "09",
+    name: "Vertex – Prop Trading Website",
+    company: "VERTEX",
+    type: "WEB · PROP TRADING",
+    tags: "WEB · FINTECH · PRODUCT SYSTEM",
+    live: false,
+    bg: "/images/project-vertex-landing.jpg",
+    mockup: "/images/mockup-vertex-landing.jpg",
+    href: "/work/vertex",
+  },
+  {
+    num: "10",
+    name: "Base360 – Website & Landing Page",
     company: "BASE360",
     type: "WEB · LANDING PAGE · VISUAL DESIGN",
     tags: "WEB · LANDING PAGE · VISUAL DESIGN",
@@ -105,6 +127,17 @@ const projects = [
     bg: "/images/project-base360.jpg",
     mockup: "/images/mockup-base360.jpg",
     href: "/work/base360",
+  },
+  {
+    num: "11",
+    name: "Movie Cinema – Ticket Booking App",
+    company: "PRODUCT CONCEPT",
+    type: "MOBILE · MOVIE TICKETS",
+    tags: "MOBILE · BOOKING · COMMERCE",
+    live: false,
+    bg: "/images/project-cinema-booking-real.jpg",
+    mockup: "/images/mockup-cinema-booking-real.jpg",
+    href: "/work/cinema-booking",
   },
 ];
 
@@ -115,7 +148,7 @@ const MARQUEE_TEXT = projects.map((project) => project.name).join("  ·  ") + " 
 function ProjectInfo({ active }: { active: number }) {
   const p = TEASER_PROJECTS[active];
   return (
-    <div className="bottom-[130px] md:bottom-[72px]" style={{ position: "absolute", left: "clamp(32px, 5vw, 64px)", zIndex: 15 }}>
+    <div className="bottom-[130px] max-w-[calc(100%-64px)] md:bottom-[72px] md:max-w-[65%]" style={{ position: "absolute", left: "clamp(32px, 5vw, 64px)", zIndex: 15 }}>
 
       {/* Counter */}
       <div style={{ display: "flex", alignItems: "baseline", gap: "5px", marginBottom: 10 }}>
@@ -305,7 +338,7 @@ function MarqueeStrip() {
 
 // ── Mockup wipe layer ──────────────────────────────────────────────────────
 function MockupLayer({ src, index, total, scrollYProgress }: {
-  src: string; index: number; total: number; scrollYProgress: MotionValue<number>;
+  src: string | null; index: number; total: number; scrollYProgress: MotionValue<number>;
 }) {
   const y = useTransform(scrollYProgress, (progress: number): string => {
     if (typeof window === "undefined") return index === 0 ? "0%" : "100%";
@@ -342,7 +375,16 @@ function MockupLayer({ src, index, total, scrollYProgress }: {
   });
   return (
     <motion.div style={{ position: "absolute", inset: 0, y }}>
-      <Image src={src} alt="" fill sizes="clamp(340px, 34vw, 520px)" style={{ objectFit: "cover" }} priority={index === 0} />
+      {src ? (
+        <Image src={src} alt="" fill sizes="clamp(340px, 34vw, 520px)" style={{ objectFit: "cover" }} priority={index === 0} />
+      ) : (
+        <div aria-hidden="true" className="grid h-full place-items-center bg-[#14130c] text-[#ffef00]">
+          <svg className="w-1/4" viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M32 6 52 14v14c0 14-9 24-20 30C21 52 12 42 12 28V14L32 6Z" />
+            <path d="m24 32 5 5 11-11" />
+          </svg>
+        </div>
+      )}
     </motion.div>
   );
 }
@@ -403,7 +445,7 @@ function CardProgress({ scrollYProgress, total }: { scrollYProgress: MotionValue
 
 // ── Background card ────────────────────────────────────────────────────────
 function ProjectBgCard({ num, name, tags, bg, href, index, total }: {
-  num: string; name: string; tags: string; bg: string; href: string; index: number; total: number;
+  num: string; name: string; tags: string; bg: string | null; href: string; index: number; total: number;
 }) {
   return (
     <div style={{ height: `${CARD_VH}vh`, position: "relative" }}>
@@ -411,13 +453,17 @@ function ProjectBgCard({ num, name, tags, bg, href, index, total }: {
         position: "sticky", top: 0, height: "100vh", overflow: "hidden",
         zIndex: 10 + index, backgroundColor: "#08090b",
       }}>
-        <div aria-hidden="true" className="absolute inset-0">
-          <Image src={bg} alt="" fill sizes="100vw" style={{ objectFit: "cover" }} priority={index === 0} />
-        </div>
+        {bg ? (
+          <div aria-hidden="true" className="absolute inset-0">
+            <Image src={bg} alt="" fill sizes="100vw" style={{ objectFit: "cover" }} priority={index === 0} />
+          </div>
+        ) : (
+          <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,#8a761e_0%,#302606_50%,#08090b_95%)]" />
+        )}
 
         <Link
           href={href}
-          aria-label={`${name} — open case study`}
+          aria-label={bg ? `${name} — open case study` : `${name} — read the brief`}
           className="absolute inset-0 z-[4]"
         />
 
@@ -438,10 +484,11 @@ function ProjectBgCard({ num, name, tags, bg, href, index, total }: {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "flex-end",
+          gap: 24,
           zIndex: 3,
         }}>
           {/* Left: number + name */}
-          <div>
+          <div className="min-w-0">
             <span style={{
               fontFamily: '"Aeonik Mono", monospace',
               fontSize: 11,
@@ -467,7 +514,7 @@ function ProjectBgCard({ num, name, tags, bg, href, index, total }: {
           </div>
 
           {/* Right: tags */}
-          <span style={{
+          <span className="hidden max-w-[30%] shrink-0 md:block" style={{
             fontFamily: '"Aeonik Mono", monospace',
             fontSize: "clamp(10px, 0.85vw, 13px)",
             letterSpacing: "0.18em",
